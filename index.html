@@ -1263,26 +1263,26 @@
             color: var(--primary-gold);
         }
         
-        /* فوتر */
+        /* فوتر - کوچک‌تر شده */
         .exquisite-footer {
             background: linear-gradient(135deg, var(--dark-text) 0%, #3A2E28 100%);
             color: var(--white);
-            padding: 60px 0 25px;
+            padding: 40px 0 20px; /* کاهش padding-top از 60px به 40px */
             position: relative;
         }
         
         .footer-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 35px;
-            margin-bottom: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* کاهش از 240px به 220px */
+            gap: 25px; /* کاهش از 35px به 25px */
+            margin-bottom: 30px; /* کاهش از 40px به 30px */
         }
         
         .footer-column h3 {
-            font-size: 1.4rem;
-            margin-bottom: 22px;
+            font-size: 1.2rem; /* کاهش از 1.4rem به 1.2rem */
+            margin-bottom: 18px; /* کاهش از 22px به 18px */
             position: relative;
-            padding-bottom: 10px;
+            padding-bottom: 8px; /* کاهش از 10px به 8px */
             color: var(--primary-gold);
         }
         
@@ -1291,7 +1291,7 @@
             position: absolute;
             bottom: 0;
             right: 0;
-            width: 45px;
+            width: 35px; /* کاهش از 45px به 35px */
             height: 2px;
             background: var(--primary-gold);
         }
@@ -1301,7 +1301,7 @@
         }
         
         .footer-column ul li {
-            margin-bottom: 12px;
+            margin-bottom: 10px; /* کاهش از 12px به 10px */
         }
         
         .footer-column a {
@@ -1310,31 +1310,31 @@
             transition: var(--transition-fast);
             display: flex;
             align-items: center;
-            gap: 8px;
-            font-size: 0.9rem;
+            gap: 6px; /* کاهش از 8px به 6px */
+            font-size: 0.85rem; /* کاهش از 0.9rem به 0.85rem */
         }
         
         .footer-column a:hover {
             color: var(--primary-gold);
-            padding-right: 8px;
+            padding-right: 6px; /* کاهش از 8px به 6px */
         }
         
         .social-icons {
             display: flex;
-            gap: 12px;
-            margin-top: 22px;
+            gap: 10px; /* کاهش از 12px به 10px */
+            margin-top: 18px; /* کاهش از 22px به 18px */
         }
         
         .social-icon {
-            width: 40px;
-            height: 40px;
+            width: 36px; /* کاهش از 40px به 36px */
+            height: 36px; /* کاهش از 40px به 36px */
             border-radius: 50%;
             background: rgba(230, 179, 37, 0.1);
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--primary-gold);
-            font-size: 16px;
+            font-size: 14px; /* کاهش از 16px به 14px */
             transition: var(--transition-fast);
         }
         
@@ -1346,10 +1346,10 @@
         
         .copyright {
             text-align: center;
-            padding-top: 25px;
+            padding-top: 20px; /* کاهش از 25px به 20px */
             border-top: 1px solid rgba(232, 216, 201, 0.1);
             color: #B8A89A;
-            font-size: 0.8rem;
+            font-size: 0.75rem; /* کاهش از 0.8rem به 0.75rem */
         }
         
         /* ریسپانسیو */
@@ -1506,6 +1506,12 @@
                 margin-top: 65px;
             }
             
+            /* فوتر موبایل */
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
             /* رسید موبایل */
             .receipt-footer {
                 flex-direction: column;
@@ -1612,6 +1618,20 @@
                 font-size: 1.4rem;
                 padding: 6px 15px;
             }
+            
+            /* فوتر موبایل کوچک */
+            .exquisite-footer {
+                padding: 35px 0 18px;
+            }
+            
+            .footer-container {
+                gap: 18px;
+            }
+            
+            .footer-column h3 {
+                font-size: 1.1rem;
+                margin-bottom: 15px;
+            }
         }
         
         @media (max-width: 480px) {
@@ -1714,7 +1734,7 @@
             
             .footer-container {
                 grid-template-columns: 1fr;
-                gap: 30px;
+                gap: 15px;
             }
             
             .gallery-swiper {
@@ -1738,6 +1758,35 @@
             .booking-code {
                 flex-direction: column;
                 gap: 10px;
+            }
+            
+            /* فوتر موبایل خیلی کوچک */
+            .exquisite-footer {
+                padding: 30px 0 15px;
+            }
+            
+            .footer-column h3 {
+                font-size: 1rem;
+                margin-bottom: 12px;
+            }
+            
+            .footer-column ul li {
+                margin-bottom: 8px;
+            }
+            
+            .footer-column a {
+                font-size: 0.8rem;
+            }
+            
+            .social-icon {
+                width: 32px;
+                height: 32px;
+                font-size: 13px;
+            }
+            
+            .copyright {
+                font-size: 0.7rem;
+                padding-top: 15px;
             }
         }
     </style>
@@ -2103,13 +2152,13 @@
         </div>
     </div>
 
-    <!-- فوتر -->
+    <!-- فوتر - کوچک‌تر شده -->
     <footer class="exquisite-footer">
         <div class="container">
             <div class="footer-container">
                 <div class="footer-column">
                     <h3>گالری زیبایی لوکس بانو</h3>
-                    <p style="margin-bottom: 22px; color: #E8D8C9; line-height: 1.6; font-size: 0.9rem;">ارائه بهترین خدمات زیبایی و آرایشی در محیطی اشرافی با کادری مجرب و آموزش دیده بین‌المللی. میزبان زیبایی شما در قلب تهران.</p>
+                    <p style="margin-bottom: 18px; color: #E8D8C9; line-height: 1.5; font-size: 0.85rem;">ارائه بهترین خدمات زیبایی و آرایشی در محیطی اشرافی با کادری مجرب و آموزش دیده بین‌المللی. میزبان زیبایی شما در قلب تهران.</p>
                     <div class="social-icons">
                         <a href="#" class="social-icon">
                             <i class="fab fa-instagram"></i>
@@ -2564,7 +2613,7 @@
             // نمایش زمان‌های موجود
             renderTimeSlots();
             
-            // تنظیم تقویم فارسی
+            // تنظیم تقویم فارسی (شمسی)
             flatpickr("#booking-date", {
                 locale: "fa",
                 minDate: "today",
@@ -3125,5 +3174,4 @@
         }
     </script>
 </body>
-
 </html>
