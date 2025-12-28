@@ -1,0 +1,3128 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رزرو آنلاین | گالری زیبایی لوکس بانو</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Marcellus&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+    <style>
+        :root {
+            /* پالت رنگ‌های جدید زیبا و لوکس */
+            --primary-gold: #E6B325;
+            --primary-gold-light: #F7E4A8;
+            --primary-gold-dark: #C19A1E;
+            --primary-rose: #F5B5C8;
+            --primary-rose-light: #FCE8EE;
+            --primary-rose-dark: #D98FA8;
+            --primary-cream: #FFF9F0;
+            --primary-champagne: #FCF3E4;
+            --secondary-lavender: #D8C3E8;
+            --secondary-mint: #B5E6D8;
+            --secondary-peach: #FFD8C9;
+            --secondary-sky: #A8D8EA;
+            --secondary-lilac: #E6CFFF;
+            --dark-text: #4A3C34;
+            --medium-text: #7D6E65;
+            --light-text: #A89A91;
+            --white: #FFFFFF;
+            --black: #2A2A2A;
+            --shadow-soft: 0 10px 25px rgba(74, 60, 52, 0.08);
+            --shadow-medium: 0 15px 35px rgba(74, 60, 52, 0.12);
+            --shadow-strong: 0 20px 40px rgba(74, 60, 52, 0.15);
+            --radius-xl: 24px;
+            --radius-lg: 16px;
+            --radius-md: 10px;
+            --radius-sm: 6px;
+            --transition-slow: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+            --transition-medium: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+            --transition-fast: all 0.2s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark-text);
+            background-color: var(--primary-cream);
+            overflow-x: hidden;
+            line-height: 1.6;
+            background-image: 
+                radial-gradient(circle at 5% 10%, var(--primary-rose-light) 0%, transparent 20%),
+                radial-gradient(circle at 95% 90%, var(--primary-gold-light) 0%, transparent 20%);
+        }
+        
+        h1, h2, h3, h4, .logo-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+        
+        /* هدر با رنگ‌های جدید */
+        .exquisite-header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 2000;
+            background: linear-gradient(135deg, rgba(255, 249, 240, 0.98) 0%, rgba(252, 243, 228, 0.98) 100%);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(230, 179, 37, 0.15);
+            transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+            padding: 18px 0;
+            box-shadow: 0 4px 20px rgba(74, 60, 52, 0.08);
+        }
+        
+        .exquisite-header.scrolled {
+            padding: 10px 0;
+            background: linear-gradient(135deg, rgba(255, 249, 240, 0.99) 0%, rgba(252, 243, 228, 0.99) 100%);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 6px 25px rgba(74, 60, 52, 0.12);
+            border-bottom: 1px solid rgba(230, 179, 37, 0.2);
+        }
+        
+        .exquisite-header.scrolled .logo-icon {
+            width: 40px;
+            height: 40px;
+            font-size: 16px;
+        }
+        
+        .exquisite-header.scrolled .logo-text {
+            font-size: 1.6rem;
+        }
+        
+        .exquisite-header.scrolled .logo-subtitle {
+            font-size: 0.65rem;
+            letter-spacing: 1.5px;
+        }
+        
+        .exquisite-header.scrolled .nav-link {
+            font-size: 0.9rem;
+            padding: 6px 0;
+        }
+        
+        .exquisite-header.scrolled .header-cta {
+            padding: 10px 18px;
+            font-size: 0.85rem;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+        
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+        
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-gold) 0%, var(--secondary-peach) 50%, var(--primary-rose) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+        
+        .logo-text {
+            font-size: 2rem;
+            background: linear-gradient(to right, var(--primary-gold), var(--primary-rose-dark), var(--secondary-lavender));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: 0.5px;
+            transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+        
+        .logo-subtitle {
+            font-family: 'Marcellus', serif;
+            font-size: 0.75rem;
+            color: var(--medium-text);
+            letter-spacing: 2px;
+            margin-top: -3px;
+            transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+        
+        .exquisite-nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+        
+        .nav-item {
+            position: relative;
+        }
+        
+        .nav-link {
+            text-decoration: none;
+            color: var(--dark-text);
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 8px 0;
+            transition: all 0.3s ease;
+            position: relative;
+            display: block;
+        }
+        
+        .nav-link:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(to right, var(--primary-gold), var(--secondary-lavender));
+            transition: var(--transition-medium);
+        }
+        
+        .nav-link:hover:before, .nav-link.active:before {
+            width: 100%;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-gold-dark);
+        }
+        
+        .header-cta {
+            background: linear-gradient(135deg, var(--primary-gold) 0%, var(--primary-gold-dark) 100%);
+            color: white;
+            border: none;
+            padding: 10px 22px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-soft);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+        
+        .header-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        /* هیرو با رنگ‌های جدید */
+        .exquisite-hero {
+            height: 60vh;
+            min-height: 450px;
+            position: relative;
+            margin-top: 90px;
+            border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+            overflow: hidden;
+            transition: margin-top 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+        
+        .exquisite-header.scrolled + .exquisite-hero {
+            margin-top: 70px;
+        }
+        
+        .hero-slider {
+            height: 100%;
+            width: 100%;
+        }
+        
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .swiper-slide {
+            position: relative;
+        }
+        
+        .slide-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.85);
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(135deg, rgba(74, 60, 52, 0.85) 0%, rgba(217, 143, 168, 0.6) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 30px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            color: white;
+            z-index: 10;
+        }
+        
+        .hero-title {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1s ease;
+            line-height: 1.2;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            opacity: 0.9;
+            font-weight: 300;
+            animation: fadeInUp 1s ease 0.3s both;
+            max-width: 600px;
+            margin: 0 auto 25px;
+        }
+        
+        .hero-cta {
+            background: transparent;
+            color: white;
+            border: 2px solid var(--primary-gold);
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-medium);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+        
+        .hero-cta:hover {
+            background: var(--primary-gold);
+            color: var(--dark-text);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        /* گالری تصاویر با رنگ‌های جدید */
+        .gallery-section {
+            padding: 70px 0;
+            background: var(--white);
+            position: relative;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--dark-text);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            right: 50%;
+            transform: translateX(50%);
+            width: 90px;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary-gold), var(--secondary-lavender));
+            border-radius: 3px;
+        }
+        
+        .section-subtitle {
+            font-size: 1rem;
+            color: var(--medium-text);
+            max-width: 700px;
+            margin: 20px auto 0;
+            line-height: 1.6;
+        }
+        
+        /* گالری دسکتاپ (Grid) */
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 22px;
+            margin-top: 40px;
+        }
+        
+        /* گالری موبایل (Swiper) */
+        .gallery-swiper-container {
+            display: none;
+            margin-top: 40px;
+            padding: 0 10px;
+        }
+        
+        .gallery-swiper {
+            width: 100%;
+            height: 320px;
+            padding: 10px 0;
+        }
+        
+        .gallery-swiper-slide {
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 5px;
+        }
+        
+        @media (max-width: 768px) {
+            .gallery-container {
+                grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+                gap: 18px;
+            }
+        }
+        
+        .gallery-item {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            height: 260px;
+            cursor: pointer;
+            transition: var(--transition-medium);
+            background: linear-gradient(135deg, var(--primary-rose-light) 0%, var(--primary-cream) 100%);
+            border: 1px solid rgba(230, 179, 37, 0.1);
+            width: 100%;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-strong);
+            border-color: var(--primary-gold);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition-slow);
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            background: linear-gradient(to top, rgba(74, 60, 52, 0.9), transparent);
+            color: white;
+            padding: 18px;
+            transform: translateY(15px);
+            opacity: 0;
+            transition: var(--transition-medium);
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .gallery-title {
+            font-size: 1.2rem;
+            margin-bottom: 6px;
+        }
+        
+        .gallery-description {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+        
+        /* بخش خدمات اختصاصی */
+        .services-section {
+            padding: 70px 0;
+            background: linear-gradient(135deg, var(--primary-cream) 0%, var(--primary-champagne) 100%);
+            position: relative;
+        }
+        
+        .services-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, var(--primary-rose-light) 0%, transparent 70%);
+            border-radius: 50%;
+            opacity: 0.5;
+            z-index: 0;
+        }
+        
+        .services-section:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, var(--primary-gold-light) 0%, transparent 70%);
+            border-radius: 50%;
+            opacity: 0.3;
+            z-index: 0;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 25px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+        
+        /* خدمات موبایل (Swiper) */
+        .services-swiper-container {
+            display: none;
+            position: relative;
+            z-index: 1;
+            padding: 0 10px;
+        }
+        
+        .services-swiper {
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            padding: 10px 0;
+        }
+        
+        .service-swiper-slide {
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 5px;
+        }
+        
+        /* کارت خدمات جدید با نمایش کامل عکس‌ها */
+        .service-card-detailed {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            transition: var(--transition-medium);
+            position: relative;
+            border: 1px solid rgba(230, 179, 37, 0.1);
+            box-shadow: var(--shadow-soft);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            min-height: 350px; /* افزایش ارتفاع برای نمایش بهتر عکس‌ها */
+            width: 100%;
+        }
+        
+        .service-card-detailed:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-medium);
+            border-color: var(--primary-gold);
+        }
+        
+        .service-card-header {
+            position: relative;
+            height: 180px; /* افزایش ارتفاع برای نمایش کامل عکس‌ها */
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--primary-rose-light) 0%, var(--primary-cream) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .service-card-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* تغییر از cover به contain برای نمایش کامل عکس */
+            transition: var(--transition-slow);
+            padding: 10px; /* اضافه کردن padding برای جلوگیری از برخورد عکس به لبه‌ها */
+            max-width: 100%;
+            max-height: 100%;
+        }
+        
+        .service-card-detailed:hover .service-card-image {
+            transform: scale(1.05);
+        }
+        
+        .service-card-category {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: var(--primary-gold);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 14px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            box-shadow: var(--shadow-soft);
+            z-index: 2;
+        }
+        
+        .service-card-content {
+            padding: 15px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        
+        .service-card-title {
+            font-size: 1.1rem;
+            color: var(--dark-text);
+            margin-bottom: 6px;
+            line-height: 1.3;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        .service-card-duration {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--medium-text);
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+            flex-shrink: 0;
+        }
+        
+        .service-card-description {
+            color: var(--medium-text);
+            margin-bottom: 12px;
+            line-height: 1.4;
+            font-size: 0.85rem;
+            flex-grow: 1;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            text-overflow: ellipsis;
+        }
+        
+        .service-card-details {
+            margin-bottom: 10px;
+            padding: 8px;
+            background: linear-gradient(135deg, var(--primary-rose-light) 0%, var(--primary-cream) 100%);
+            border-radius: var(--radius-md);
+            border-right: 2px solid var(--primary-gold);
+            flex-shrink: 0;
+            display: none;
+        }
+        
+        .service-detail-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 4px 0;
+            border-bottom: 1px dashed rgba(230, 179, 37, 0.2);
+            font-size: 0.8rem;
+        }
+        
+        .service-detail-item:last-child {
+            border-bottom: none;
+        }
+        
+        .service-detail-label {
+            color: var(--dark-text);
+            font-weight: 500;
+        }
+        
+        .service-detail-value {
+            color: var(--medium-text);
+        }
+        
+        .service-card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+            padding-top: 12px;
+            border-top: 1px solid rgba(230, 179, 37, 0.1);
+            flex-shrink: 0;
+        }
+        
+        .service-card-price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-gold-dark);
+        }
+        
+        .service-book-btn {
+            background: linear-gradient(135deg, var(--primary-gold) 0%, var(--primary-gold-dark) 100%);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: var(--transition-medium);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            box-shadow: var(--shadow-soft);
+        }
+        
+        .service-book-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+            background: linear-gradient(135deg, var(--primary-gold-dark) 0%, var(--primary-gold) 100%);
+        }
+        
+        /* بخش رزرو */
+        .booking-section {
+            padding: 70px 0;
+            background: var(--white);
+            position: relative;
+        }
+        
+        .booking-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* فرم رزرو */
+        .booking-form {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            padding: 35px;
+            box-shadow: var(--shadow-soft);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(230, 179, 37, 0.1);
+        }
+        
+        .form-decorative-border {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary-gold), var(--secondary-lavender), var(--primary-gold));
+        }
+        
+        .booking-service-info {
+            background: linear-gradient(135deg, var(--primary-rose-light) 0%, var(--primary-cream) 100%);
+            border-radius: var(--radius-lg);
+            padding: 18px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(230, 179, 37, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .booking-service-details h3 {
+            font-size: 1.2rem;
+            color: var(--dark-text);
+            margin-bottom: 5px;
+        }
+        
+        .booking-service-details p {
+            font-size: 0.9rem;
+            color: var(--medium-text);
+            line-height: 1.4;
+        }
+        
+        .booking-service-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-gold-dark);
+        }
+        
+        .form-section {
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .section-header-small {
+            font-size: 1.5rem;
+            color: var(--dark-text);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            position: relative;
+            padding-bottom: 12px;
+        }
+        
+        .section-header-small:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(to right, var(--primary-gold), var(--secondary-lavender));
+            border-radius: 2px;
+        }
+        
+        .section-icon {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, var(--primary-gold) 0%, var(--secondary-peach) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            box-shadow: var(--shadow-soft);
+        }
+        
+        /* تقویم */
+        .date-time-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .date-time-section {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .calendar-section, .time-section {
+            background: linear-gradient(135deg, var(--primary-rose-light) 0%, var(--primary-cream) 100%);
+            border-radius: var(--radius-lg);
+            padding: 18px;
+            border: 1px solid rgba(230, 179, 37, 0.1);
+        }
+        
+        .time-slots {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(85px, 1fr));
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .time-slot {
+            padding: 12px 6px;
+            text-align: center;
+            background: var(--white);
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: var(--transition-fast);
+            border: 2px solid rgba(230, 179, 37, 0.2);
+            font-weight: 500;
+            font-size: 0.85rem;
+            position: relative;
+            overflow: hidden;
+            user-select: none;
+        }
+        
+        .time-slot:hover:not(.unavailable) {
+            border-color: var(--primary-gold);
+            transform: translateY(-2px);
+            background: linear-gradient(135deg, var(--primary-cream) 0%, var(--white) 100%);
+        }
+        
+        .time-slot.selected {
+            background: linear-gradient(135deg, var(--primary-gold) 0%, var(--primary-gold-dark) 100%);
+            color: white;
+            border-color: transparent;
+            box-shadow: var(--shadow-soft);
+            animation: pulseSelected 0.5s ease;
+        }
+        
+        .time-slot.unavailable {
+            background: #f5f5f5;
+            color: #ccc;
+            cursor: not-allowed;
+            border-color: #eee;
+            position: relative;
+        }
+        
+        .time-slot.unavailable:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 10%;
+            width: 80%;
+            height: 1px;
+            background: #ccc;
+            transform: translateY(-50%) rotate(-45deg);
+        }
+        
+        .booking-btn {
+            display: block;
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, var(--primary-gold) 0%, var(--primary-gold-dark) 100%);
+            color: white;
+            border: none;
+            border-radius: var(--radius-lg);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-medium);
+            box-shadow: var(--shadow-soft);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            margin-top: 25px;
+        }
+        
+        .booking-btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: var(--transition-medium);
+        }
+        
+        .booking-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-medium);
+            background: linear-gradient(135deg, var(--primary-gold-dark) 0%, var(--primary-gold) 100%);
+        }
+        
+        .booking-btn:hover:before {
+            right: 100%;
+        }
+        
+        /* مودال نمایش تصویر */
+        .image-modal {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: rgba(42, 42, 42, 0.95);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 3000;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition-medium);
+            backdrop-filter: blur(10px);
+        }
+        
+        .image-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .modal-image-container {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+        
+        .modal-image {
+            max-width: 100%;
+            max-height: 85vh;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-strong);
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--primary-gold);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            transition: var(--transition-fast);
+            z-index: 10;
+        }
+        
+        .close-modal:hover {
+            background: var(--primary-gold-dark);
+            transform: rotate(90deg);
+        }
+        
+        /* مودال نمایش رسید نوبت - جدید */
+        .receipt-modal {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: rgba(42, 42, 42, 0.95);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 3001;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition-medium);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+        }
+        
+        .receipt-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .receipt-container {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            max-width: 600px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: var(--shadow-strong);
+            animation: slideUp 0.5s ease;
+        }
+        
+        .receipt-header {
+            background: linear-gradient(135deg, var(--primary-gold) 0%, var(--primary-gold-dark) 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+            position: relative;
+        }
+        
+        .receipt-header:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary-rose), var(--secondary-lavender));
+        }
+        
+        .receipt-title {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            font-family: 'Cormorant Garamond', serif;
+        }
+        
+        .receipt-subtitle {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        
+        .receipt-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            margin: 0 auto 20px;
+            border: 3px solid white;
+        }
+        
+        .receipt-content {
+            padding: 30px;
+        }
+        
+        .receipt-details {
+            background: linear-gradient(135deg, var(--primary-rose-light) 0%, var(--primary-cream) 100%);
+            border-radius: var(--radius-lg);
+            padding: 25px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(230, 179, 37, 0.2);
+        }
+        
+        .receipt-detail-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px dashed rgba(230, 179, 37, 0.3);
+            font-size: 1rem;
+        }
+        
+        .receipt-detail-item:last-child {
+            border-bottom: none;
+        }
+        
+        .receipt-detail-label {
+            color: var(--dark-text);
+            font-weight: 600;
+            min-width: 120px;
+        }
+        
+        .receipt-detail-value {
+            color: var(--medium-text);
+            text-align: left;
+            flex-grow: 1;
+        }
+        
+        .receipt-note {
+            background: linear-gradient(135deg, var(--primary-cream) 0%, #f9f5f0 100%);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            margin-bottom: 25px;
+            border-right: 4px solid var(--primary-gold);
+        }
+        
+        .receipt-note h4 {
+            color: var(--primary-gold-dark);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .receipt-note ul {
+            list-style: none;
+            padding-right: 5px;
+        }
+        
+        .receipt-note li {
+            margin-bottom: 8px;
+            padding-right: 8px;
+            color: var(--medium-text);
+            font-size: 0.9rem;
+        }
+        
+        .receipt-note li i {
+            color: var(--primary-gold);
+            margin-left: 5px;
+            font-size: 0.8rem;
+        }
+        
+        .receipt-footer {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            margin-top: 25px;
+        }
+        
+        .receipt-btn {
+            flex: 1;
+            padding: 15px;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition-medium);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            border: none;
+        }
+        
+        .receipt-print {
+            background: linear-gradient(135deg, var(--primary-gold) 0%, var(--primary-gold-dark) 100%);
+            color: white;
+        }
+        
+        .receipt-close {
+            background: transparent;
+            color: var(--dark-text);
+            border: 2px solid var(--primary-gold);
+        }
+        
+        .receipt-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .receipt-print:hover {
+            background: linear-gradient(135deg, var(--primary-gold-dark) 0%, var(--primary-gold) 100%);
+        }
+        
+        .receipt-close:hover {
+            background: var(--primary-gold);
+            color: white;
+        }
+        
+        /* کد نوبت */
+        .booking-code {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-md);
+        }
+        
+        .code-label {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .code-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            letter-spacing: 3px;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 8px 20px;
+            border-radius: var(--radius-md);
+            font-family: monospace;
+        }
+        
+        /* انیمیشن‌ها */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(230, 179, 37, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(230, 179, 37, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(230, 179, 37, 0);
+            }
+        }
+        
+        @keyframes pulseSelected {
+            0% {
+                box-shadow: 0 0 0 0 rgba(230, 179, 37, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 8px rgba(230, 179, 37, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(230, 179, 37, 0);
+            }
+        }
+        
+        /* منوی موبایل */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--primary-gold-dark);
+            font-size: 24px;
+            cursor: pointer;
+            padding: 5px;
+            transition: var(--transition-fast);
+        }
+        
+        .mobile-menu-btn:hover {
+            color: var(--primary-gold);
+        }
+        
+        /* فوتر */
+        .exquisite-footer {
+            background: linear-gradient(135deg, var(--dark-text) 0%, #3A2E28 100%);
+            color: var(--white);
+            padding: 60px 0 25px;
+            position: relative;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 35px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.4rem;
+            margin-bottom: 22px;
+            position: relative;
+            padding-bottom: 10px;
+            color: var(--primary-gold);
+        }
+        
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 45px;
+            height: 2px;
+            background: var(--primary-gold);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-column a {
+            color: #E8D8C9;
+            text-decoration: none;
+            transition: var(--transition-fast);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+        }
+        
+        .footer-column a:hover {
+            color: var(--primary-gold);
+            padding-right: 8px;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 12px;
+            margin-top: 22px;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(230, 179, 37, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-gold);
+            font-size: 16px;
+            transition: var(--transition-fast);
+        }
+        
+        .social-icon:hover {
+            background: var(--primary-gold);
+            color: var(--dark-text);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 25px;
+            border-top: 1px solid rgba(232, 216, 201, 0.1);
+            color: #B8A89A;
+            font-size: 0.8rem;
+        }
+        
+        /* ریسپانسیو */
+        @media (max-width: 1200px) {
+            .container {
+                padding: 0 25px;
+            }
+            
+            .hero-title {
+                font-size: 2.8rem;
+            }
+            
+            .booking-form {
+                padding: 30px;
+            }
+            
+            .receipt-container {
+                max-width: 500px;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .exquisite-nav ul {
+                gap: 18px;
+            }
+            
+            .logo-text {
+                font-size: 1.7rem;
+            }
+            
+            .hero-title {
+                font-size: 2.3rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .booking-form {
+                padding: 25px;
+            }
+            
+            /* منوی موبایل */
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .exquisite-nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 380px;
+                height: 100vh;
+                background: linear-gradient(135deg, rgba(255, 249, 240, 0.98) 0%, rgba(252, 243, 228, 0.98) 100%);
+                backdrop-filter: blur(20px);
+                padding: 90px 35px 35px;
+                transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+                box-shadow: -10px 0 30px rgba(74, 60, 52, 0.1);
+                z-index: 1999;
+                overflow-y: auto;
+            }
+            
+            .exquisite-nav.active {
+                right: 0;
+            }
+            
+            .exquisite-nav ul {
+                flex-direction: column;
+                gap: 22px;
+                align-items: flex-start;
+            }
+            
+            .nav-link {
+                font-size: 1rem;
+                padding: 8px 0;
+            }
+            
+            .header-cta {
+                display: none;
+            }
+            
+            /* آیکون بستن منوی موبایل */
+            .close-menu {
+                position: absolute;
+                top: 25px;
+                left: 25px;
+                background: var(--primary-gold);
+                color: white;
+                width: 38px;
+                height: 38px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 18px;
+                cursor: pointer;
+                transition: var(--transition-fast);
+            }
+            
+            .close-menu:hover {
+                background: var(--primary-gold-dark);
+                transform: rotate(90deg);
+            }
+            
+            /* خدمات موبایل */
+            .services-grid {
+                display: none;
+            }
+            
+            .services-swiper-container {
+                display: block;
+            }
+            
+            /* برای موبایل - تنظیمات خاص با نمایش کامل عکس‌ها */
+            .service-card-detailed {
+                min-height: 320px;
+            }
+            
+            .service-card-header {
+                height: 160px;
+            }
+            
+            .service-card-title {
+                height: 24px;
+                font-size: 0.95rem;
+            }
+            
+            .service-card-description {
+                -webkit-line-clamp: 3;
+                font-size: 0.8rem;
+            }
+            
+            /* گالری موبایل */
+            .gallery-container {
+                display: none;
+            }
+            
+            .gallery-swiper-container {
+                display: block;
+            }
+            
+            .exquisite-header.scrolled .logo-icon {
+                width: 38px;
+                height: 38px;
+                font-size: 15px;
+            }
+            
+            .exquisite-header.scrolled .logo-text {
+                font-size: 1.4rem;
+            }
+            
+            .exquisite-header.scrolled + .exquisite-hero {
+                margin-top: 65px;
+            }
+            
+            /* رسید موبایل */
+            .receipt-footer {
+                flex-direction: column;
+            }
+            
+            .receipt-detail-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+            
+            .receipt-detail-label {
+                min-width: auto;
+            }
+            
+            .receipt-detail-value {
+                text-align: right;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: row;
+                justify-content: space-between;
+                gap: 0;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.7rem;
+            }
+            
+            .exquisite-hero {
+                height: 50vh;
+                min-height: 380px;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .services-swiper {
+                height: auto;
+            }
+            
+            .service-swiper-slide {
+                height: auto;
+            }
+            
+            .service-card-detailed {
+                min-height: 300px;
+            }
+            
+            .service-card-header {
+                height: 150px;
+            }
+            
+            .service-card-title {
+                height: 23px;
+                font-size: 0.9rem;
+            }
+            
+            .service-card-description {
+                font-size: 0.75rem;
+            }
+            
+            .service-card-price {
+                font-size: 1.2rem;
+            }
+            
+            .service-book-btn {
+                padding: 6px 12px;
+                font-size: 0.8rem;
+            }
+            
+            .service-card-image {
+                padding: 8px;
+            }
+            
+            .gallery-swiper {
+                height: 300px;
+            }
+            
+            .gallery-swiper-slide {
+                height: 280px;
+            }
+            
+            .gallery-item {
+                height: 240px;
+            }
+            
+            .receipt-title {
+                font-size: 1.8rem;
+            }
+            
+            .receipt-content {
+                padding: 20px;
+            }
+            
+            .code-value {
+                font-size: 1.4rem;
+                padding: 6px 15px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 18px;
+            }
+            
+            .booking-form {
+                padding: 20px;
+            }
+            
+            .section-header-small {
+                font-size: 1.3rem;
+            }
+            
+            .exquisite-header {
+                padding: 15px 0;
+            }
+            
+            .exquisite-header.scrolled {
+                padding: 8px 0;
+            }
+            
+            .exquisite-header.scrolled .logo-icon {
+                width: 35px;
+                height: 35px;
+                font-size: 14px;
+            }
+            
+            .exquisite-header.scrolled .logo-text {
+                font-size: 1.2rem;
+            }
+            
+            .exquisite-header.scrolled + .exquisite-hero {
+                margin-top: 60px;
+            }
+            
+            .service-card-detailed {
+                min-height: 280px;
+            }
+            
+            .service-card-header {
+                height: 140px;
+            }
+            
+            .service-card-title {
+                height: 20px;
+                font-size: 0.85rem;
+            }
+            
+            .service-card-content {
+                padding: 12px;
+            }
+            
+            .service-card-footer {
+                flex-direction: column;
+                gap: 10px;
+                align-items: stretch;
+            }
+            
+            .service-card-price {
+                text-align: center;
+                font-size: 1.1rem;
+            }
+            
+            .service-book-btn {
+                width: 100%;
+                justify-content: center;
+                padding: 5px 10px;
+                font-size: 0.75rem;
+            }
+            
+            .service-card-image {
+                padding: 6px;
+            }
+            
+            .booking-service-info {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+            
+            .booking-service-details h3 {
+                font-size: 1.1rem;
+            }
+            
+            .booking-service-price {
+                font-size: 1.3rem;
+            }
+            
+            .time-slots {
+                grid-template-columns: repeat(auto-fill, minmax(75px, 1fr));
+                gap: 8px;
+            }
+            
+            .time-slot {
+                padding: 10px 4px;
+                font-size: 0.8rem;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .gallery-swiper {
+                height: 280px;
+            }
+            
+            .gallery-swiper-slide {
+                height: 260px;
+            }
+            
+            .receipt-header {
+                padding: 20px;
+            }
+            
+            .receipt-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 28px;
+            }
+            
+            .booking-code {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- هدر با رنگ‌های جدید -->
+    <header class="exquisite-header">
+        <div class="container header-container">
+            <div class="logo-section">
+                <div class="logo-icon">
+                    <i class="fas fa-crown"></i>
+                </div>
+                <div>
+                    <div class="logo-text">لوکس بانو</div>
+                    <div class="logo-subtitle">GALERIE DE BEAUTÉ</div>
+                </div>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav class="exquisite-nav" id="main-nav">
+                <div class="close-menu" id="close-menu">
+                    <i class="fas fa-times"></i>
+                </div>
+                <ul>
+                    <li class="nav-item"><a href="#" class="nav-link">خانه</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link active">خدمات</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">گالری</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">متخصصین</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">تماس</a></li>
+                </ul>
+            </nav>
+            
+            <button class="header-cta">
+                <i class="fas fa-phone-alt"></i>
+                ۰۲۱-۱۲۳۴۵۶۷۸
+            </button>
+        </div>
+    </header>
+
+    <!-- هیرو با تصویر پیش‌فرض -->
+    <section class="exquisite-hero">
+        <div class="hero-slider">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <!-- تصویر پیش‌فرض -->
+                        <img src="defaultph.jpeg" alt="آرایشگاه لوکس" class="slide-image" loading="lazy">
+                        <div class="hero-overlay">
+                            <div class="hero-content">
+                                <h1 class="hero-title">زیبایی تو، هنر ماست</h1>
+                                <p class="hero-subtitle">در گالری زیبایی لوکس بانو، هر مراجعه کننده یک شاهکار هنری است. خدمات اختصاصی در محیطی لوکس و رویایی.</p>
+                                <button class="hero-cta" id="scroll-to-services">
+                                    <i class="fas fa-spa"></i>
+                                    مشاهده خدمات
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="defaultph.jpeg" alt="آرایش عروس" class="slide-image" loading="lazy">
+                        <div class="hero-overlay">
+                            <div class="hero-content">
+                                <h1 class="hero-title">روز عروسی تو، افسانه‌ای می‌شود</h1>
+                                <p class="hero-subtitle">آرایش عروس اختصاصی با بهترین مواد و تکنیک‌های روز دنیا توسط متخصصین بین‌المللی</p>
+                                <button class="hero-cta" id="scroll-to-services">
+                                    <i class="fas fa-heart"></i>
+                                    آرایش عروس ایده‌آل
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="defaultph.jpeg" alt="سالن زیبایی" class="slide-image" loading="lazy">
+                        <div class="hero-overlay">
+                            <div class="hero-content">
+                                <h1 class="hero-title">محیطی رویایی برای زیباتر شدن</h1>
+                                <p class="hero-subtitle">سالنی با طراحی اختصاصی و امکانات مدرن برای ارائه بهترین خدمات زیبایی و آرایشی</p>
+                                <button class="hero-cta" id="scroll-to-services">
+                                    <i class="fas fa-gem"></i>
+                                    خدمات اختصاصی
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- گالری تصاویر با تصویر پیش‌فرض -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">گالری زیبایی لوکس بانو</h2>
+                <p class="section-subtitle">زیبایی را در فضایی اشرافی و با طراحی منحصر به فرد تجربه کنید. تصاویر زیر گوشه‌ای از فضای آرایشگاه و خدمات ما را نشان می‌دهد.</p>
+            </div>
+            
+            <!-- گالری دسکتاپ (Grid) -->
+            <div class="gallery-container" id="gallery-desktop">
+                <div class="gallery-item">
+                    <img src="defaultph.jpeg" alt="سالن انتظار" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">سالن انتظار VIP</h3>
+                        <p class="gallery-description">محیطی دلنشین با طراحی مدرن و امکانات رفاهی کامل</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="defaultph.jpeg" alt="محیط اصلی آرایشگاه" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">محیط اصلی آرایشگاه</h3>
+                        <p class="gallery-description">طراحی اروپایی با بالاترین استانداردهای بهداشتی</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="defaultph.jpeg" alt="بخش تخصصی مو" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">بخش تخصصی مو</h3>
+                        <p class="gallery-description">کوتاهی، رنگ، هایلایت و درمان مو با پیشرفته‌ترین روش‌ها</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="defaultph.jpeg" alt="آرایش صورت تخصصی" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">آرایش صورت تخصصی</h3>
+                        <p class="gallery-description">استفاده از برندهای معتبر جهانی و تکنیک‌های حرفه‌ای</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="defaultph.jpeg" alt="بخش ناخن و مانیکور" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">بخش ناخن و مانیکور</h3>
+                        <p class="gallery-description">محیطی استریل با ابزار یکبار مصرف و مواد باکیفیت</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="defaultph.jpeg" alt="محصولات اختصاصی" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">محصولات اختصاصی</h3>
+                        <p class="gallery-description">استفاده از بهترین برندهای مراقبت پوست و مو</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- گالری موبایل (Swiper) -->
+            <div class="gallery-swiper-container" id="gallery-swiper-container">
+                <div class="swiper gallery-swiper" id="gallery-swiper">
+                    <div class="swiper-wrapper" id="gallery-swiper-wrapper">
+                        <!-- آیتم‌های گالری از طریق جاوااسکریپت اضافه می‌شوند -->
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- بخش خدمات اختصاصی -->
+    <section class="services-section" id="services-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">خدمات اختصاصی لوکس بانو</h2>
+                <p class="section-subtitle">هر خدمت در لوکس بانو با دقت و ظرافت خاصی ارائه می‌شود. جزئیات هر خدمت را مشاهده و برای رزرو مستقیم اقدام کنید.</p>
+            </div>
+            
+            <!-- خدمات دسکتاپ (Grid) -->
+            <div class="services-grid" id="services-desktop">
+                <!-- خدمات از طریق جاوااسکریپت اضافه می‌شوند -->
+            </div>
+            
+            <!-- خدمات موبایل (Swiper) -->
+            <div class="services-swiper-container" id="services-swiper-container">
+                <div class="swiper services-swiper" id="services-swiper">
+                    <div class="swiper-wrapper" id="services-swiper-wrapper">
+                        <!-- خدمات از طریق جاوااسکریپت اضافه می‌شوند -->
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- بخش رزرو -->
+    <section class="booking-section" id="booking-section">
+        <div class="container booking-container">
+            <div class="booking-form" id="booking-form">
+                <div class="form-decorative-border"></div>
+                
+                <div class="section-header">
+                    <h2 class="section-title">رزرو نوبت</h2>
+                    <p class="section-subtitle">فرم زیر را تکمیل کنید تا نوبت شما رزرو شود. همکاران ما در اسرع وقت با شما تماس خواهند گرفت.</p>
+                </div>
+                
+                <div class="booking-service-info" id="booking-service-info">
+                    <!-- اطلاعات خدمت انتخاب شده اینجا نمایش داده می‌شود -->
+                    <div class="booking-service-details">
+                        <h3 id="selected-service-title">لطفاً یک خدمت را انتخاب کنید</h3>
+                        <p id="selected-service-description">برای مشاهده جزئیات و رزرو، روی دکمه "رزرو این خدمت" در کارت خدمات کلیک کنید.</p>
+                    </div>
+                    <div class="booking-service-price" id="selected-service-price">--</div>
+                </div>
+
+                <!-- انتخاب تاریخ و زمان -->
+                <div class="form-section">
+                    <div class="section-header-small">
+                        <div class="section-icon">
+                            <i class="far fa-calendar-alt"></i>
+                        </div>
+                        <span>زمان مدنظر</span>
+                    </div>
+                    <div class="date-time-section">
+                        <div class="calendar-section">
+                            <label for="booking-date" style="display: block; margin-bottom: 10px; font-weight: 500;">تاریخ مراجعه:</label>
+                            <input type="text" id="booking-date" class="form-control" placeholder="روز مورد نظر را انتخاب کنید" style="width: 100%; padding: 14px; border: 2px solid rgba(230, 179, 37, 0.2); border-radius: var(--radius-md); font-size: 1rem; background: var(--white);">
+                        </div>
+                        <div class="time-section">
+                            <label style="display: block; margin-bottom: 10px; font-weight: 500;">ساعت مراجعه:</label>
+                            <div class="time-slots" id="time-slots">
+                                <!-- زمان‌ها از طریق جاوااسکریپت اضافه می‌شوند -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- اطلاعات کاربر -->
+                <div class="form-section">
+                    <div class="section-header-small">
+                        <div class="section-icon">
+                            <i class="far fa-user-circle"></i>
+                        </div>
+                        <span>اطلاعات شخصی</span>
+                    </div>
+                    <div class="form-group" style="margin-bottom: 25px;">
+                        <label for="booking-name" style="display: block; margin-bottom: 8px; font-weight: 500;">نام و نام خانوادگی *</label>
+                        <input type="text" id="booking-name" class="form-control" placeholder="نام کامل خود را وارد کنید" style="width: 100%; padding: 14px; border: 2px solid rgba(230, 179, 37, 0.2); border-radius: var(--radius-md); font-size: 1rem; background: var(--white); transition: var(--transition-fast);">
+                    </div>
+                    <div class="form-group" style="margin-bottom: 25px;">
+                        <label for="booking-phone" style="display: block; margin-bottom: 8px; font-weight: 500;">شماره تلفن *</label>
+                        <input type="tel" id="booking-phone" class="form-control" placeholder="۰۹۱۲۳۴۵۶۷۸۹" style="width: 100%; padding: 14px; border: 2px solid rgba(230, 179, 37, 0.2); border-radius: var(--radius-md); font-size: 1rem; background: var(--white);">
+                    </div>
+                    <div class="form-group">
+                        <label for="booking-email" style="display: block; margin-bottom: 8px; font-weight: 500;">ایمیل (اختیاری)</label>
+                        <input type="email" id="booking-email" class="form-control" placeholder="email@example.com" style="width: 100%; padding: 14px; border: 2px solid rgba(230, 179, 37, 0.2); border-radius: var(--radius-md); font-size: 1rem; background: var(--white);">
+                    </div>
+                </div>
+
+                <button class="booking-btn" id="booking-confirm">
+                    <i class="fas fa-gem"></i>
+                    رزرو نوبت
+                </button>
+                
+                <div style="margin-top: 25px; padding: 18px; background: linear-gradient(135deg, var(--primary-rose-light) 0%, var(--primary-cream) 100%); border-radius: var(--radius-md); border-right: 3px solid var(--primary-gold);">
+                    <h3 style="color: var(--primary-dark); margin-bottom: 8px; font-size: 1.1rem; display: flex; align-items: center; gap: 8px;">
+                        <i class="fas fa-gift"></i>
+                        مزایای رزرو آنلاین
+                    </h3>
+                    <ul style="list-style: none; color: var(--medium-text); font-size: 0.9rem;">
+                        <li style="margin-bottom: 8px; padding-right: 8px;">
+                            <i class="fas fa-check" style="color: var(--primary-gold); margin-left: 5px; font-size: 0.8rem;"></i>
+                            دریافت ۱۵٪ تخفیف اولین رزرو
+                        </li>
+                        <li style="margin-bottom: 8px; padding-right: 8px;">
+                            <i class="fas fa-check" style="color: var(--primary-gold); margin-left: 5px; font-size: 0.8rem;"></i>
+                            هدیه ویژه لوکس بانو
+                        </li>
+                        <li style="padding-right: 8px;">
+                            <i class="fas fa-check" style="color: var(--primary-gold); margin-left: 5px; font-size: 0.8rem;"></i>
+                            رزرو فوری بدون معطلی
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- مودال نمایش تصویر -->
+    <div class="image-modal" id="image-modal">
+        <div class="close-modal" id="close-modal">
+            <i class="fas fa-times"></i>
+        </div>
+        <div class="modal-image-container">
+            <img id="modal-image" class="modal-image" src="" alt="تصویر بزرگ">
+        </div>
+    </div>
+
+    <!-- مودال نمایش رسید نوبت - جدید -->
+    <div class="receipt-modal" id="receipt-modal">
+        <div class="receipt-container" id="receipt-container">
+            <div class="receipt-header">
+                <div class="receipt-icon">
+                    <i class="fas fa-gem"></i>
+                </div>
+                <h2 class="receipt-title">رسید نوبت شما</h2>
+                <p class="receipt-subtitle">رزرو شما با موفقیت ثبت شد!</p>
+                
+                <div class="booking-code">
+                    <span class="code-label">کد پیگیری:</span>
+                    <span class="code-value" id="receipt-code">LB-2024-001</span>
+                </div>
+            </div>
+            
+            <div class="receipt-content">
+                <div class="receipt-details">
+                    <div class="receipt-detail-item">
+                        <span class="receipt-detail-label">نام و نام خانوادگی:</span>
+                        <span class="receipt-detail-value" id="receipt-name">--</span>
+                    </div>
+                    <div class="receipt-detail-item">
+                        <span class="receipt-detail-label">شماره تلفن:</span>
+                        <span class="receipt-detail-value" id="receipt-phone">--</span>
+                    </div>
+                    <div class="receipt-detail-item">
+                        <span class="receipt-detail-label">خدمت انتخاب شده:</span>
+                        <span class="receipt-detail-value" id="receipt-service">--</span>
+                    </div>
+                    <div class="receipt-detail-item">
+                        <span class="receipt-detail-label">قیمت خدمت:</span>
+                        <span class="receipt-detail-value" id="receipt-price">--</span>
+                    </div>
+                    <div class="receipt-detail-item">
+                        <span class="receipt-detail-label">تاریخ مراجعه:</span>
+                        <span class="receipt-detail-value" id="receipt-date">--</span>
+                    </div>
+                    <div class="receipt-detail-item">
+                        <span class="receipt-detail-label">ساعت مراجعه:</span>
+                        <span class="receipt-detail-value" id="receipt-time">--</span>
+                    </div>
+                    <div class="receipt-detail-item">
+                        <span class="receipt-detail-label">تاریخ رزرو:</span>
+                        <span class="receipt-detail-value" id="receipt-booking-date">--</span>
+                    </div>
+                </div>
+                
+                <div class="receipt-note">
+                    <h4><i class="fas fa-info-circle"></i> نکات مهم</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> لطفاً ۱۵ دقیقه قبل از زمان مقرر در آرایشگاه حاضر شوید.</li>
+                        <li><i class="fas fa-check"></i> این رسید را همراه داشته باشید یا کد پیگیری را به کارشناس ما ارائه دهید.</li>
+                        <li><i class="fas fa-check"></i> در صورت تأخیر بیش از ۱۵ دقیقه، نوبت شما لغو خواهد شد.</li>
+                        <li><i class="fas fa-check"></i> برای تغییر یا لغو نوبت، حداقل ۲۴ ساعت قبل با ما تماس بگیرید.</li>
+                        <li><i class="fas fa-check"></i> این رسید شامل ۱۵٪ تخفیف ویژه اولین رزرو می‌باشد.</li>
+                    </ul>
+                </div>
+                
+                <div class="receipt-footer">
+                    <button class="receipt-btn receipt-print" id="print-receipt">
+                        <i class="fas fa-print"></i>
+                        چاپ رسید
+                    </button>
+                    <button class="receipt-btn receipt-close" id="close-receipt">
+                        <i class="fas fa-times"></i>
+                        بستن
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- فوتر -->
+    <footer class="exquisite-footer">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h3>گالری زیبایی لوکس بانو</h3>
+                    <p style="margin-bottom: 22px; color: #E8D8C9; line-height: 1.6; font-size: 0.9rem;">ارائه بهترین خدمات زیبایی و آرایشی در محیطی اشرافی با کادری مجرب و آموزش دیده بین‌المللی. میزبان زیبایی شما در قلب تهران.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>دسترسی سریع</h3>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-chevron-left"></i> خانه</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-left"></i> خدمات اختصاصی</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-left"></i> گالری تصاویر</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-left"></i> متخصصین</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-left"></i> تماس با ما</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>تماس با ما</h3>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> تهران، خیابان ولیعصر، پلاک ۱۲۳۴</a></li>
+                        <li><a href="#"><i class="fas fa-phone"></i> ۰۲۱-۱۲۳۴۵۶۷۸</a></li>
+                        <li><a href="#"><i class="fas fa-mobile-alt"></i> ۰۹۱۲۳۴۵۶۷۸۹</a></li>
+                        <li><a href="#"><i class="fas fa-envelope"></i> info@luxebano.com</a></li>
+                        <li><a href="#"><i class="far fa-clock"></i> همه روزه ۹ صبح تا ۱۰ شب</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>© کلیه حقوق برای گالری زیبایی لوکس بانو محفوظ است. طراحی و توسعه با ❤️ | ۱۴۰۳</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- اسکریپت‌ها -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/fa.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script>
+        // داده‌های خدمات با تغییرات درخواستی
+        const detailedServices = [
+            { 
+                id: 1, 
+                name: "میکاپ عروس", 
+                duration: "۲.۵ ساعت", 
+                price: 3200000, 
+                category: "میکاپ", 
+                icon: "fas fa-heart",
+                image: "makeupbride.JPG",
+                description: "میکاپ عروس با بهترین مواد و تکنیک‌های روز دنیا توسط متخصصین بین‌المللی.",
+                details: [
+                    { label: "سختی کار", value: "متوسط" },
+                    { label: "مواد", value: "برندهای لوکس" },
+                    { label: "مناسب", value: "مراسم عروسی" },
+                    { label: "گارانتی", value: "۲۴ ساعته" }
+                ]
+            },
+            { 
+                id: 2, 
+                name: "میکاپ ویژه", 
+                duration: "۲ ساعت", 
+                price: 850000, 
+                category: "میکاپ", 
+                icon: "fas fa-palette",
+                image: "makeup.JPG",
+                description: "میکاپ حرفه‌ای با تاکید بر زیبایی طبیعی و ماندگاری بالا.",
+                details: [
+                    { label: "سختی کار", value: "آسان" },
+                    { label: "مواد", value: "هایپوآلرژیک" },
+                    { label: "مناسب", value: "مهمانی" },
+                    { label: "گارانتی", value: "۱۲ ساعته" }
+                ]
+            },
+            { 
+                id: 3, 
+                name: "کوتاهی و استایل مو", 
+                duration: "۱.۵ ساعت", 
+                price: 350000, 
+                category: "مراقبت مو", 
+                icon: "fas fa-cut",
+                image: "cut1.JPG",
+                description: "کوتاهی حرفه‌ای مو با جدیدترین استایل‌های روز دنیا.",
+                details: [
+                    { label: "سختی کار", value: "متوسط" },
+                    { label: "ابزار", value: "حرفه‌ای" },
+                    { label: "مناسب", value: "همه سنین" },
+                    { label: "مشاوره", value: "رایگان" }
+                ]
+            },
+            { 
+                id: 4, 
+                name: "رنگ موی لوکس", 
+                duration: "۳ ساعت", 
+                price: 1250000, 
+                category: "رنگ مو", 
+                icon: "fas fa-fill-drip",
+                image: "rang1.JPG",
+                description: "رنگ موی با کیفیت و بدون آسیب با رنگ‌های اروپایی.",
+                details: [
+                    { label: "سختی کار", value: "سخت" },
+                    { label: "رنگ", value: "اروپایی" },
+                    { label: "مناسب", value: "موهای آسیب دیده" },
+                    { label: "گارانتی", value: "۱ ماهه" }
+                ]
+            },
+            { 
+                id: 5, 
+                name: "کاشت ناخن", 
+                duration: "۲ ساعت", 
+                price: 950000, 
+                category: "ناخن", 
+                icon: "fas fa-hand-sparkles",
+                image: "nail1.JPG",
+                description: "کاشت ناخن با کیفیت عالی و طرح‌های متنوع.",
+                details: [
+                    { label: "سختی کار", value: "متوسط" },
+                    { label: "جنس ناخن", value: "کره‌ای باکیفیت" },
+                    { label: "مناسب", value: "ناخن‌های کوتاه" },
+                    { label: "ماندگاری", value: "۳ هفته" }
+                ]
+            },
+            { 
+                id: 6, 
+                name: "اکستنشن مژه", 
+                duration: "۱.۵ ساعت", 
+                price: 750000, 
+                category: "مژه و ابرو", 
+                icon: "fas fa-eye-lash",
+                image: "ex1.JPG",
+                description: "اکستنشن مژه با مژه‌های ابریشمی طبیعی.",
+                details: [
+                    { label: "سختی کار", value: "ظریف" },
+                    { label: "جنس مژه", value: "ابریشم طبیعی" },
+                    { label: "مناسب", value: "نگاه دراماتیک" },
+                    { label: "ماندگاری", value: "۳-۴ هفته" }
+                ]
+            },
+            { 
+                id: 7, 
+                name: "شینیون", 
+                duration: "۲ ساعت", 
+                price: 600000, 
+                category: "آرایش مو", 
+                icon: "fas fa-fan",
+                image: "sh1.JPG",
+                description: "شینیون و بافت مو برای مراسم ویژه.",
+                details: [
+                    { label: "سختی کار", value: "متوسط" },
+                    { label: "ابزار", value: "حرفه‌ای" },
+                    { label: "مناسب", value: "مراسم عروسی" },
+                    { label: "گارانتی", value: "تا پایان مراسم" }
+                ]
+            },
+            { 
+                id: 8, 
+                name: "اصلاح صورت", 
+                duration: "۱ ساعت", 
+                price: 300000, 
+                category: "اصلاح و رفع موهای زائد", 
+                icon: "fas fa-cut",
+                image: "es1.JPG",
+                description: "اصلاح صورت با تکنیک‌های مدرن و بدون حساسیت.",
+                details: [
+                    { label: "سختی کار", value: "آسان" },
+                    { label: "ابزار", value: "استریل" },
+                    { label: "مناسب", value: "آقایان و بانوان" },
+                    { label: "گارانتی", value: "عدم حساسیت" }
+                ]
+            }
+        ];
+
+        // داده‌های گالری با تصویر پیش‌فرض
+        const galleryItems = [
+            {
+                title: "سالن انتظار VIP",
+                description: "محیطی دلنشین با طراحی مدرن و امکانات رفاهی کامل",
+                image: "defaultph.jpeg"
+            },
+            {
+                title: "محیط اصلی آرایشگاه",
+                description: "طراحی اروپایی با بالاترین استانداردهای بهداشتی",
+                image: "defaultph.jpeg"
+            },
+            {
+                title: "بخش تخصصی مو",
+                description: "کوتاهی، رنگ، هایلایت و درمان مو با پیشرفته‌ترین روش‌ها",
+                image: "defaultph.jpeg"
+            },
+            {
+                title: "آرایش صورت تخصصی",
+                description: "استفاده از برندهای معتبر جهانی و تکنیک‌های حرفه‌ای",
+                image: "defaultph.jpeg"
+            },
+            {
+                title: "بخش ناخن و مانیکور",
+                description: "محیطی استریل با ابزار یکبار مصرف و مواد باکیفیت",
+                image: "defaultph.jpeg"
+            },
+            {
+                title: "محصولات اختصاصی",
+                description: "استفاده از بهترین برندهای مراقبت پوست و مو",
+                image: "defaultph.jpeg"
+            }
+        ];
+
+        // زمان‌های موجود - ثابت
+        const availableTimes = ["09:00", "10:30", "12:00", "14:00", "15:30", "17:00", "18:30", "20:00"];
+        
+        // زمان‌های رزرو شده (غیرقابل انتخاب)
+        const bookedTimes = ["12:00", "15:30"];
+        
+        // متغیرهای حالت
+        let selectedService = null;
+        let selectedDate = null;
+        let selectedTime = null;
+        
+        // DOM Elements
+        const servicesContainerDesktop = document.getElementById('services-desktop');
+        const servicesContainerSwiper = document.getElementById('services-swiper-wrapper');
+        const gallerySwiperWrapper = document.getElementById('gallery-swiper-wrapper');
+        const timeSlotsContainer = document.getElementById('time-slots');
+        const bookingServiceInfo = document.getElementById('booking-service-info');
+        const selectedServiceTitle = document.getElementById('selected-service-title');
+        const selectedServiceDescription = document.getElementById('selected-service-description');
+        const selectedServicePrice = document.getElementById('selected-service-price');
+        const confirmBookingBtn = document.getElementById('booking-confirm');
+        const imageModal = document.getElementById('image-modal');
+        const modalImage = document.getElementById('modal-image');
+        const closeModalBtn = document.getElementById('close-modal');
+        const receiptModal = document.getElementById('receipt-modal');
+        const receiptContainer = document.getElementById('receipt-container');
+        const receiptName = document.getElementById('receipt-name');
+        const receiptPhone = document.getElementById('receipt-phone');
+        const receiptService = document.getElementById('receipt-service');
+        const receiptPrice = document.getElementById('receipt-price');
+        const receiptDate = document.getElementById('receipt-date');
+        const receiptTime = document.getElementById('receipt-time');
+        const receiptBookingDate = document.getElementById('receipt-booking-date');
+        const receiptCode = document.getElementById('receipt-code');
+        const printReceiptBtn = document.getElementById('print-receipt');
+        const closeReceiptBtn = document.getElementById('close-receipt');
+        const header = document.querySelector('.exquisite-header');
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mainNav = document.getElementById('main-nav');
+        const closeMenuBtn = document.getElementById('close-menu');
+        const scrollToServicesBtns = document.querySelectorAll('#scroll-to-services');
+        
+        // Swiper instances
+        let heroSwiper = null;
+        let servicesSwiper = null;
+        let gallerySwiper = null;
+        
+        // شمارنده برای تولید کد پیگیری منحصر به فرد
+        let bookingCounter = 1;
+        
+        // تابع تولید کد پیگیری منحصر به فرد
+        function generateBookingCode() {
+            const now = new Date();
+            const year = now.getFullYear();
+            const month = String(now.getMonth() + 1).padStart(2, '0');
+            const day = String(now.getDate()).padStart(2, '0');
+            const counter = String(bookingCounter).padStart(3, '0');
+            bookingCounter++;
+            return `LB-${year}${month}${day}-${counter}`;
+        }
+        
+        // تابع فرمت تاریخ فارسی
+        function formatPersianDate(date) {
+            const persianMonths = [
+                'فروردین', 'اردیبهشت', 'خرداد', 'تیر', 'مرداد', 'شهریور',
+                'مهر', 'آبان', 'آذر', 'دی', 'بهمن', 'اسفند'
+            ];
+            
+            const d = new Date(date);
+            const day = d.getDate();
+            const month = persianMonths[d.getMonth()];
+            const year = d.getFullYear();
+            
+            return `${day} ${month} ${year}`;
+        }
+        
+        // تابع نمایش رسید نوبت
+        function showReceipt(bookingData) {
+            // پر کردن اطلاعات رسید
+            receiptName.textContent = bookingData.fullName;
+            receiptPhone.textContent = bookingData.phone;
+            receiptService.textContent = bookingData.service;
+            receiptPrice.textContent = bookingData.price.toLocaleString() + ' تومان';
+            receiptDate.textContent = formatPersianDate(bookingData.date);
+            receiptTime.textContent = bookingData.time;
+            receiptBookingDate.textContent = formatPersianDate(new Date());
+            receiptCode.textContent = generateBookingCode();
+            
+            // نمایش مودال رسید
+            receiptModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        // تابع چاپ رسید
+        function printReceipt() {
+            const printContent = receiptContainer.innerHTML;
+            const originalContent = document.body.innerHTML;
+            
+            document.body.innerHTML = `
+                <!DOCTYPE html>
+                <html lang="fa" dir="rtl">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>رسید نوبت - لوکس بانو</title>
+                    <style>
+                        body {
+                            font-family: 'B Nazanin', Tahoma, sans-serif;
+                            direction: rtl;
+                            padding: 20px;
+                            color: #333;
+                        }
+                        .receipt-container {
+                            max-width: 600px;
+                            margin: 0 auto;
+                            border: 2px solid #E6B325;
+                            border-radius: 15px;
+                            overflow: hidden;
+                        }
+                        .receipt-header {
+                            background: linear-gradient(135deg, #E6B325 0%, #C19A1E 100%);
+                            color: white;
+                            padding: 25px;
+                            text-align: center;
+                        }
+                        .receipt-title {
+                            font-size: 28px;
+                            margin-bottom: 10px;
+                            font-weight: bold;
+                        }
+                        .receipt-subtitle {
+                            font-size: 16px;
+                            opacity: 0.9;
+                        }
+                        .receipt-content {
+                            padding: 25px;
+                        }
+                        .receipt-details {
+                            background: #f9f5f0;
+                            border-radius: 10px;
+                            padding: 20px;
+                            margin-bottom: 20px;
+                            border: 1px solid #E6B325;
+                        }
+                        .receipt-detail-item {
+                            display: flex;
+                            justify-content: space-between;
+                            padding: 10px 0;
+                            border-bottom: 1px dashed #E6B325;
+                        }
+                        .receipt-detail-item:last-child {
+                            border-bottom: none;
+                        }
+                        .receipt-detail-label {
+                            font-weight: bold;
+                            min-width: 140px;
+                        }
+                        .receipt-note {
+                            background: #f0f0f0;
+                            border-radius: 8px;
+                            padding: 15px;
+                            margin-bottom: 20px;
+                            border-right: 4px solid #E6B325;
+                        }
+                        .receipt-note h4 {
+                            color: #C19A1E;
+                            margin-bottom: 10px;
+                        }
+                        .receipt-note ul {
+                            list-style: none;
+                            padding-right: 15px;
+                        }
+                        .receipt-note li {
+                            margin-bottom: 8px;
+                            font-size: 14px;
+                        }
+                        .booking-code {
+                            text-align: center;
+                            margin-top: 15px;
+                            padding: 15px;
+                            background: rgba(230, 179, 37, 0.1);
+                            border-radius: 8px;
+                        }
+                        .code-value {
+                            font-size: 24px;
+                            font-weight: bold;
+                            color: #C19A1E;
+                            letter-spacing: 3px;
+                            font-family: monospace;
+                        }
+                        @media print {
+                            body {
+                                padding: 0;
+                            }
+                            .no-print {
+                                display: none !important;
+                            }
+                        }
+                    </style>
+                </head>
+                <body>
+                    ${printContent}
+                    <div style="text-align: center; margin-top: 30px; color: #666; font-size: 12px;" class="no-print">
+                        <p>این رسید به صورت خودکار چاپ شده است.</p>
+                        <p>گالری زیبایی لوکس بانو | تلفن: ۰۲۱-۱۲۳۴۵۶۷۸</p>
+                    </div>
+                    <script>
+                        window.onload = function() {
+                            window.print();
+                            setTimeout(function() {
+                                window.close();
+                            }, 1000);
+                        }
+                    <\/script>
+                </body>
+                </html>
+            `;
+            
+            window.print();
+            
+            // برگشت به صفحه اصلی پس از چاپ
+            setTimeout(() => {
+                document.body.innerHTML = originalContent;
+                location.reload();
+            }, 1000);
+        }
+        
+        // مقداردهی اولیه
+        document.addEventListener('DOMContentLoaded', function() {
+            // نمایش خدمات - دسکتاپ
+            renderServicesDesktop();
+            
+            // نمایش خدمات - موبایل (Swiper)
+            renderServicesSwiper();
+            
+            // نمایش گالری - موبایل (Swiper)
+            renderGallerySwiper();
+            
+            // نمایش زمان‌های موجود
+            renderTimeSlots();
+            
+            // تنظیم تقویم فارسی
+            flatpickr("#booking-date", {
+                locale: "fa",
+                minDate: "today",
+                maxDate: new Date().fp_incr(30),
+                disable: [
+                    function(date) {
+                        // غیرفعال کردن دوشنبه‌ها
+                        return date.getDay() === 1;
+                    }
+                ],
+                onChange: function(selectedDates, dateStr, instance) {
+                    selectedDate = dateStr;
+                    console.log(`تاریخ انتخاب شده: ${selectedDate}`);
+                }
+            });
+            
+            // اضافه کردن رویداد برای دکمه تأیید رزرو
+            confirmBookingBtn.addEventListener('click', function() {
+                if (validateBooking()) {
+                    showConfirmation();
+                }
+            });
+            
+            // رویداد بستن مودال تصویر
+            closeModalBtn.addEventListener('click', function() {
+                imageModal.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+            
+            // رویداد بستن مودال رسید
+            closeReceiptBtn.addEventListener('click', function() {
+                receiptModal.classList.remove('active');
+                document.body.style.overflow = '';
+                resetForm();
+            });
+            
+            // رویداد چاپ رسید
+            printReceiptBtn.addEventListener('click', function() {
+                printReceipt();
+            });
+            
+            // کلیک خارج از مودال‌ها برای بستن
+            imageModal.addEventListener('click', function(e) {
+                if (e.target === imageModal) {
+                    imageModal.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+            
+            receiptModal.addEventListener('click', function(e) {
+                if (e.target === receiptModal) {
+                    receiptModal.classList.remove('active');
+                    document.body.style.overflow = '';
+                    resetForm();
+                }
+            });
+            
+            // مقداردهی اسلایدرها
+            initSwipers();
+            
+            // اضافه کردن رویداد به تصاویر گالری
+            document.querySelectorAll('.gallery-item img').forEach(img => {
+                img.addEventListener('click', function() {
+                    modalImage.src = this.src;
+                    imageModal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+            
+            // افزودن event listener برای اسکرول
+            window.addEventListener('scroll', handleScroll);
+            
+            // دکمه منوی موبایل
+            mobileMenuBtn.addEventListener('click', function() {
+                mainNav.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+            
+            // دکمه بستن منوی موبایل
+            closeMenuBtn.addEventListener('click', function() {
+                mainNav.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+            
+            // بستن منوی موبایل با کلیک روی لینک
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', function() {
+                    mainNav.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            });
+            
+            // اسکرول به بخش خدمات
+            scrollToServicesBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.getElementById('services-section').scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+            
+            // مقداردهی اولیه وضعیت هدر
+            handleScroll();
+        });
+        
+        // نمایش گالری در موبایل (Swiper)
+        function renderGallerySwiper() {
+            gallerySwiperWrapper.innerHTML = '';
+            
+            galleryItems.forEach(item => {
+                const slideElement = document.createElement('div');
+                slideElement.className = 'swiper-slide gallery-swiper-slide';
+                
+                const galleryElement = createGalleryCard(item);
+                slideElement.appendChild(galleryElement);
+                gallerySwiperWrapper.appendChild(slideElement);
+            });
+            
+            // مقداردهی اسلایدر گالری در صورتی که در موبایل هستیم
+            if (window.innerWidth <= 992 && !gallerySwiper) {
+                initGallerySwiper();
+            }
+        }
+        
+        // ایجاد کارت گالری
+        function createGalleryCard(item) {
+            const galleryElement = document.createElement('div');
+            galleryElement.className = 'gallery-item';
+            galleryElement.innerHTML = `
+                <img src="${item.image}" alt="${item.title}" loading="lazy">
+                <div class="gallery-overlay">
+                    <h3 class="gallery-title">${item.title}</h3>
+                    <p class="gallery-description">${item.description}</p>
+                </div>
+            `;
+            
+            // اضافه کردن رویداد کلیک برای باز کردن تصویر در مودال
+            galleryElement.querySelector('img').addEventListener('click', function() {
+                modalImage.src = this.src;
+                imageModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+            
+            return galleryElement;
+        }
+        
+        // نمایش خدمات در دسکتاپ (Grid)
+        function renderServicesDesktop() {
+            servicesContainerDesktop.innerHTML = '';
+            
+            detailedServices.forEach(service => {
+                const serviceElement = createServiceCard(service);
+                servicesContainerDesktop.appendChild(serviceElement);
+            });
+        }
+        
+        // نمایش خدمات در موبایل (Swiper)
+        function renderServicesSwiper() {
+            servicesContainerSwiper.innerHTML = '';
+            
+            detailedServices.forEach(service => {
+                const slideElement = document.createElement('div');
+                slideElement.className = 'swiper-slide service-swiper-slide';
+                
+                const serviceElement = createServiceCard(service);
+                slideElement.appendChild(serviceElement);
+                servicesContainerSwiper.appendChild(slideElement);
+            });
+            
+            // مقداردهی اسلایدر خدمات در صورتی که در موبایل هستیم
+            if (window.innerWidth <= 992 && !servicesSwiper) {
+                initServicesSwiper();
+            }
+        }
+        
+        // ایجاد کارت خدمات با جزئیات کامل
+        function createServiceCard(service) {
+            const serviceElement = document.createElement('div');
+            serviceElement.className = 'service-card-detailed';
+            serviceElement.innerHTML = `
+                <div class="service-card-header">
+                    <img src="${service.image}" alt="${service.name}" class="service-card-image" loading="lazy">
+                    <div class="service-card-category">${service.category}</div>
+                </div>
+                <div class="service-card-content">
+                    <h3 class="service-card-title">${service.name}</h3>
+                    <div class="service-card-duration">
+                        <i class="far fa-clock"></i>
+                        ${service.duration}
+                    </div>
+                    <p class="service-card-description">${service.description}</p>
+                    <div class="service-card-details" style="display: none;">
+                        ${service.details.map(detail => `
+                            <div class="service-detail-item">
+                                <span class="service-detail-label">${detail.label}:</span>
+                                <span class="service-detail-value">${detail.value}</span>
+                            </div>
+                        `).join('')}
+                    </div>
+                    <div class="service-card-footer">
+                        <div class="service-card-price">${service.price.toLocaleString()} تومان</div>
+                        <button class="service-book-btn" data-service-id="${service.id}">
+                            <i class="fas fa-calendar-check"></i>
+                            رزرو این خدمت
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            // اضافه کردن رویداد کلیک برای دکمه رزرو
+            const bookBtn = serviceElement.querySelector('.service-book-btn');
+            bookBtn.addEventListener('click', () => {
+                selectServiceForBooking(service);
+                // اسکرول به بخش رزرو
+                document.getElementById('booking-section').scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+            
+            return serviceElement;
+        }
+        
+        // نمایش زمان‌های موجود - بهبود یافته
+        function renderTimeSlots() {
+            timeSlotsContainer.innerHTML = '';
+            
+            availableTimes.forEach(time => {
+                // بررسی آیا زمان قبلاً رزرو شده است
+                const isBooked = bookedTimes.includes(time);
+                const isSelected = (selectedTime === time);
+                
+                const timeSlotElement = document.createElement('div');
+                timeSlotElement.className = `time-slot ${isBooked ? 'unavailable' : ''} ${isSelected ? 'selected' : ''}`;
+                timeSlotElement.textContent = time;
+                timeSlotElement.dataset.time = time;
+                
+                if (!isBooked) {
+                    timeSlotElement.addEventListener('click', () => {
+                        // حذف انتخاب قبلی از همه time slots
+                        document.querySelectorAll('.time-slot').forEach(el => {
+                            el.classList.remove('selected');
+                        });
+                        
+                        // انتخاب جدید
+                        timeSlotElement.classList.add('selected');
+                        selectedTime = time;
+                        
+                        // نمایش پیام تأیید در کنسول
+                        console.log(`زمان ${time} انتخاب شد`);
+                        
+                        // هایلایت کردن زمان انتخاب شده
+                        timeSlotElement.style.animation = 'pulseSelected 0.5s';
+                        setTimeout(() => {
+                            timeSlotElement.style.animation = '';
+                        }, 500);
+                    });
+                } else {
+                    timeSlotElement.title = "این زمان قبلاً رزرو شده است";
+                }
+                
+                timeSlotsContainer.appendChild(timeSlotElement);
+            });
+        }
+        
+        // انتخاب خدمت برای رزرو
+        function selectServiceForBooking(service) {
+            selectedService = service;
+            
+            // به روزرسانی اطلاعات خدمت در فرم رزرو
+            selectedServiceTitle.textContent = service.name;
+            selectedServiceDescription.textContent = service.description;
+            selectedServicePrice.textContent = `${service.price.toLocaleString()} تومان`;
+            
+            // نمایش زمان انتخاب شده اگر وجود دارد
+            if (selectedTime) {
+                console.log(`زمان انتخاب شده: ${selectedTime}`);
+                // برجسته کردن زمان انتخاب شده
+                const selectedElement = document.querySelector(`.time-slot[data-time="${selectedTime}"]`);
+                if (selectedElement && !selectedElement.classList.contains('unavailable')) {
+                    // حذف selected از همه
+                    document.querySelectorAll('.time-slot').forEach(el => {
+                        el.classList.remove('selected');
+                    });
+                    // اضافه کردن selected به زمان انتخاب شده
+                    selectedElement.classList.add('selected');
+                }
+            }
+            
+            // هایلایت کردن فرم رزرو
+            bookingServiceInfo.style.animation = 'pulse 0.5s';
+            setTimeout(() => {
+                bookingServiceInfo.style.animation = '';
+            }, 500);
+        }
+        
+        // اعتبارسنجی رزرو - بهبود یافته
+        function validateBooking() {
+            const fullName = document.getElementById('booking-name').value.trim();
+            const phone = document.getElementById('booking-phone').value.trim();
+            const bookingDate = document.getElementById('booking-date').value.trim();
+            
+            if (!selectedService) {
+                showMessage('لطفاً ابتدا یک خدمت را انتخاب کنید.', 'error');
+                // اسکرول به بخش خدمات
+                document.getElementById('services-section').scrollIntoView({
+                    behavior: 'smooth'
+                });
+                return false;
+            }
+            
+            if (!bookingDate) {
+                showMessage('لطفاً تاریخ مراجعه را انتخاب کنید.', 'error');
+                // فوکوس روی فیلد تاریخ
+                document.getElementById('booking-date').focus();
+                return false;
+            }
+            
+            if (!selectedTime) {
+                showMessage('لطفاً زمان مراجعه را انتخاب کنید.', 'error');
+                // اسکرول به بخش زمان‌بندی
+                document.getElementById('time-slots').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+                return false;
+            }
+            
+            if (!fullName) {
+                showMessage('لطفاً نام و نام خانوادگی خود را وارد کنید.', 'error');
+                document.getElementById('booking-name').focus();
+                return false;
+            }
+            
+            if (!phone || phone.length !== 11 || !phone.startsWith('09')) {
+                showMessage('لطفاً شماره تلفن معتبر وارد کنید (مانند ۰۹۱۲۳۴۵۶۷۸۹).', 'error');
+                document.getElementById('booking-phone').focus();
+                return false;
+            }
+            
+            return true;
+        }
+        
+        // نمایش پیام
+        function showMessage(message, type) {
+            const messageDiv = document.createElement('div');
+            messageDiv.style.cssText = `
+                position: fixed;
+                top: 120px;
+                right: 20px;
+                background: ${type === 'error' ? '#f44336' : '#4CAF50'};
+                color: white;
+                padding: 15px;
+                border-radius: var(--radius-md);
+                box-shadow: var(--shadow-medium);
+                z-index: 3000;
+                max-width: 350px;
+                animation: fadeInUp 0.4s ease;
+                border-right: 4px solid ${type === 'error' ? '#d32f2f' : '#388E3C'};
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                font-size: 0.9rem;
+            `;
+            messageDiv.innerHTML = `
+                <i class="fas fa-${type === 'error' ? 'exclamation-circle' : 'check-circle'}" style="font-size: 18px;"></i>
+                <span>${message}</span>
+            `;
+            
+            document.body.appendChild(messageDiv);
+            
+            setTimeout(() => {
+                messageDiv.style.animation = 'fadeInUp 0.4s ease reverse';
+                setTimeout(() => {
+                    document.body.removeChild(messageDiv);
+                }, 400);
+            }, 3500);
+        }
+        
+        // نمایش تأیید رزرو و نمایش رسید
+        function showConfirmation() {
+            const fullName = document.getElementById('booking-name').value.trim();
+            const phone = document.getElementById('booking-phone').value.trim();
+            const email = document.getElementById('booking-email').value.trim();
+            
+            // ایجاد داده‌های رزرو برای نمایش در رسید
+            const bookingData = {
+                fullName,
+                phone,
+                email,
+                service: selectedService.name,
+                price: selectedService.price,
+                date: selectedDate,
+                time: selectedTime,
+                serviceId: selectedService.id
+            };
+            
+            // شبیه‌سازی ارسال به سرور
+            console.log('Booking submitted:', bookingData);
+            
+            // نمایش رسید به کاربر
+            showReceipt(bookingData);
+            
+            // نمایش پیام موفقیت
+            showMessage('رزرو شما با موفقیت ثبت شد! رسید نوبت نمایش داده می‌شود.', 'success');
+        }
+        
+        // ریست فرم - بهبود یافته
+        function resetForm() {
+            document.getElementById('booking-name').value = '';
+            document.getElementById('booking-phone').value = '';
+            document.getElementById('booking-email').value = '';
+            document.getElementById('booking-date').value = '';
+            
+            // ریست انتخاب زمان - فقط selectedTime را ریست کن، اما نمایش را تغییر نده
+            selectedTime = null;
+            selectedDate = null;
+            selectedService = null;
+            
+            // فقط selected کلاس را از زمان‌ها حذف کن
+            document.querySelectorAll('.time-slot.selected').forEach(el => {
+                el.classList.remove('selected');
+            });
+            
+            // به روزرسانی اطلاعات خدمت
+            selectedServiceTitle.textContent = 'لطفاً یک خدمت را انتخاب کنید';
+            selectedServiceDescription.textContent = 'برای مشاهده جزئیات و رزرو، روی دکمه "رزرو این خدمت" در کارت خدمات کلیک کنید.';
+            selectedServicePrice.textContent = '--';
+        }
+        
+        // مقداردهی اسلایدرها
+        function initSwipers() {
+            // اسلایدر هیرو
+            heroSwiper = new Swiper('.hero-slider .swiper', {
+                direction: 'horizontal',
+                loop: true,
+                speed: 500,
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                effect: 'fade',
+                fadeEffect: {
+                    crossFade: true
+                },
+            });
+            
+            // اسلایدر خدمات و گالری (فقط در موبایل فعال می‌شود)
+            if (window.innerWidth <= 992) {
+                initServicesSwiper();
+                initGallerySwiper();
+            }
+            
+            // تغییر اندازه پنجره
+            window.addEventListener('resize', function() {
+                if (window.innerWidth <= 992) {
+                    if (!servicesSwiper) {
+                        initServicesSwiper();
+                    }
+                    if (!gallerySwiper) {
+                        initGallerySwiper();
+                    }
+                } else {
+                    if (servicesSwiper) {
+                        servicesSwiper.destroy();
+                        servicesSwiper = null;
+                    }
+                    if (gallerySwiper) {
+                        gallerySwiper.destroy();
+                        gallerySwiper = null;
+                    }
+                }
+            });
+        }
+        
+        // مقداردهی اسلایدر خدمات
+        function initServicesSwiper() {
+            servicesSwiper = new Swiper('#services-swiper', {
+                direction: 'horizontal',
+                loop: false,
+                speed: 400,
+                slidesPerView: 1.2,
+                spaceBetween: 15,
+                centeredSlides: false,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                breakpoints: {
+                    320: {
+                        slidesPerView: 1.1,
+                        spaceBetween: 12
+                    },
+                    480: {
+                        slidesPerView: 1.3,
+                        spaceBetween: 15
+                    },
+                    640: {
+                        slidesPerView: 1.6,
+                        spaceBetween: 18
+                    },
+                    768: {
+                        slidesPerView: 2,
+                        spaceBetween: 20
+                    }
+                }
+            });
+        }
+        
+        // مقداردهی اسلایدر گالری
+        function initGallerySwiper() {
+            gallerySwiper = new Swiper('#gallery-swiper', {
+                direction: 'horizontal',
+                loop: true,
+                speed: 500,
+                slidesPerView: 1.2,
+                spaceBetween: 15,
+                centeredSlides: true,
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                breakpoints: {
+                    320: {
+                        slidesPerView: 1.1,
+                        spaceBetween: 12
+                    },
+                    480: {
+                        slidesPerView: 1.3,
+                        spaceBetween: 15
+                    },
+                    640: {
+                        slidesPerView: 1.6,
+                        spaceBetween: 18
+                    },
+                    768: {
+                        slidesPerView: 2,
+                        spaceBetween: 20
+                    }
+                }
+            });
+        }
+        
+        // تابع کنترل اسکرول
+        function handleScroll() {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        }
+    </script>
+</body>
+</html>
